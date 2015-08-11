@@ -1,0 +1,16 @@
+<h1> Places You've Been </h1>
+
+<p> Add all the places you've visited. </p>
+
+<ul>
+  <% @places_been.each() do |place| %>
+    <li><%= place.place_title() %></li>
+  <% end %>
+</ul>
+
+<form action='/places' method='post'>
+  <label for='place_name'>Places:</label>
+  <input id='place_name' name='place_name' placeholder='Enter Place' type = 'text' autofocus required>
+
+  <button type='submit'>Submit</button>
+</form>

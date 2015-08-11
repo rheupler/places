@@ -6,7 +6,6 @@ describe(Place) do
     before() do
       Place.clear()
     end
-    
 
   describe('#place_title') do
     it('Makes a new place, with a title, returns title') do
@@ -23,7 +22,7 @@ describe(Place) do
     end
   end
 
-  describe('#clear') do
+  describe('.clear') do
     it('Clears the array of places so future tests can run') do
       test_place = Place.new('Cambodia')
       test_place.save()
