@@ -18,5 +18,9 @@ class Place
     @@places_been
   end
 
+  define_singleton_method(:clear) do
+    @@places_been = []
+  end
+
 
 end
