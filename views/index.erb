@@ -1,16 +1,73 @@
-<h1> Places You've Been </h1>
+<div class="panel panel-info" id="header_panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Places you've been</h3>
+  </div>
+  <div class="panel-body">
 
 <p> Add all the places you've visited. </p>
 
-<ul>
-  <% @places_been.each() do |place| %>
-    <li><%= place.place_title() %></li>
-  <% end %>
-</ul>
+
 
 <form action='/places' method='post'>
-  <label for='place_name'>Places:</label>
-  <input id='place_name' name='place_name' placeholder='Enter Place' type = 'text' autofocus required>
+  <div class='form-group'>
+    <label for='place_name'></label>
+    <span class='glyphicon glyphicon-briefcase'</span>
+    <input id='place_name' name='place_name' placeholder='Enter place' type = 'text' autofocus required>
+    <p></p>
+    <button type='submit'>Submit</button>
+  </div>
 
-  <button type='submit'>Submit</button>
+    <div class="form-group">
+    <form action="/places" enctype="multipart/form-data" method="post">
+      <label for="file">File to upload:</label>
+      <input id="file" type="file" name="file">
+      <!-- <input id="submit" type="submit" name="submit" value="Upload picture!"> -->
+    </form>
+    </div>
+  </div>
 </form>
+</div>
+</div>
+
+
+
+
+
+<ul style="list-style-type:none">
+
+  <% @places_been.each() do |place| %>
+    <li class='col-md-4 col-md-offset-4'>
+
+        <div class="panel panel-info" id="body_panel">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= place.place_title() %>
+
+            </h3>
+          </div>
+        </div>
+
+
+    </li>
+  <% end %>
+
+</ul>
+<!-- get '/upload' do
+  erb :upload
+end
+...
+@@upload
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=yes, width=device-width" />
+<title>Upload Moving Pictures</title>
+</head>
+<body>
+  <form action="/places" enctype="multipart/form-data" method="post">
+    <label for="file">File to upload:</label>
+    <input id="file" type="file" name="file">
+    <input id="submit" type="submit" name="submit" value="Upload picture!">
+  </form>
+</body>
+</html>
